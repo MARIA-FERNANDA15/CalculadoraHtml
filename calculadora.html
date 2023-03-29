@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+	  <meta charset="utf-8">
+	  <title>Calculadora de Resistores</title>
+	  <h1><center>Calculadora de Resistores</center></h1>
+  </head>
+  <style> 
+  	#total{
+  		width: 300px;
+          border-radius: 8px;
+
+  	}
+  	#res{
+          border-color: #191970
+          border-radius: 10px;
+     }
+     .black{
+          background-color: black;
+          color: white;
+     }
+     .brown{
+          background-color: brown;
+          color: white;
+     }
+     .red{
+          background-color: red;
+          color: white;
+     }
+     .orange{
+          background-color: orange;
+          color: white;
+     }
+     .yellow{
+          background-color: yellow;
+          color: black;
+     }
+     .green{
+          background-color: green;
+          color: white;
+     }
+     .blue{
+          background-color: blue;
+          color: white;
+     }
+     .purple{
+          background-color: purple;
+          color: white;
+     }
+     .cin{
+          background-color:gray ;
+          color: white;
+     }
+     .white{
+          background-color: white;
+          color: black;
+     }
+     .golden{
+          background-color: goldenrod;
+          color: black;
+     }
+     .silver{
+          background-color: silver;
+          color: black;
+     }
+     select{
+          border-radius: 8px;
+     }
+  </style>
+<body onchange="resistencia()" bgcolor="BurlyWood">
+   <div>
+   	<n1>Registrores da 1° linha</n1>
+   	<select name="cores" id="res">
+   		<option class="black" value="0"> Preto   </option>
+   		<option class="brown" value="1"> Marrom  </option>
+   		<option class="red" value="2"> Vermelho</option>
+   		<option class="orange" value="3"> Laranja </option>
+   		<option class="yellow" value="4"> Amarelo </option>
+   		<option class="green" value="5"> Verde   </option>
+   		<option class="blue" value="6"> Azul    </option>
+   		<option class="purple" value="7"> Violeta </option>
+   		<option class="cin" value="8"> Cinza   </option>
+   		<option class="white" value="9"> Branco  </option>
+   	</select>
+</div>
+     <br>
+<div > 
+   	  <n1>Registrores da 2° linha </n1>
+   	  <select name="cores2" id="res2">
+   	  	<option class="black" value="0"> Preto   </option>
+   		<option class="brown"value="1"> Marrom  </option>
+   		<option class="red"value="2"> Vermelho</option>
+   		<option class="orange"value="3"> Laranja </option>
+   		<option class="yellow"value="4"> Amarelo </option>
+   		<option class="green"value="5"> Verde   </option>
+   		<option class="blue"value="6"> Azul    </option>
+   		<option class="purple"value="7"> Violeta </option>
+   		<option class="cin"value="8"> Cinza   </option>
+   		<option class="white"value="9"> Branco  </option>
+   	  </select>  
+</div>
+     <br>
+<div>
+	 <n1> Multiplicadores </n1>
+	 <select name="multi" id="mult">
+	     <option class="black" value="1"> Preto   </option>
+   		<option class="brown"  value="10"> Marrom  </option>
+   		<option class="red" value="100"> Vermelho</option>
+   		<option class="orange" value="1000"> Laranja </option>
+   		<option class="yellow" value="10000"> Amarelo </option>
+   		<option class="green" value="100000"> Verde   </option>
+   		<option class="blue" value="1000000"> Azul    </option>
+   		<option class="purple" value="10000000"> Violeta </option> 
+   		<option class="golden" value="0.1"> dourado </option>
+          <option class="silver" value="0.01"> prateado </option>		
+   	  </select>	
+</div>
+     <br>
+<div>
+	 <n1>Tolerância</n1>
+	 <select name="tolerancia" id="tole">
+	 	  <option value="0"> nenhuma </option>
+          <option class="golden"value="0.05"> dourado </option>
+          <option class="silver"value="0.10"> prateado </option>
+     </select>
+</div>
+     <br>
+<div> 
+     <input type="text" id="total" readonly>
+</div>
+     <script>
+     	function resistencia(){
+     		let f1= document.getElementById("res").value;
+            let f2= document.getElementById("res2").value;
+            let multi=document.getElementById("mult").value;
+            let tole=document.getElementById("tole").value;
+            let soma= (f1 + f2)*multi;
+            let resmax = soma + (soma * tole);
+            let resmim = soma - (soma * tole);
+             document.getElementById("total").value = "A resitencia está entre " + resmim + " e " + resmax;
+            
+        }
+
+
+     </script>
+</body>
+</html>
